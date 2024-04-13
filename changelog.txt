@@ -1,0 +1,700 @@
+v21.8.3
+- Cambie xz-utils a 5.4.3 para que coincida con los espejos kodi
+
+v21.8.2
+- Eliminar ventanas xz-utils depende desde que se corrigió Findlzma.cmake
+- Findlzma agrega un nombre alternativo para satisfacer las compilaciones de Windows
+
+v21.8.1
+- Actualice zlib a v1.2.13
+- Actualización pugixml a v1.14
+- Actualice xz-utils a 5.4.3
+
+v21.8.0
+- Admite catchup-id para URL activas siempre que sea posible
+- Admite los especificadores Y, m, d, H, M, S para URL activas, útiles para complementos y depuración
+- Habilite la reproducción desde EPG en la configuración del modo Live TV para Catchup VOD
+- Solo configure el tiempo de espera de conexión para el administrador de conexiones si no es NFS
+- Admite el especificador de duración para URL activas, útil para complementos y depuración
+- Admite el especificador completo para URL activas, útil para complementos y depuración
+- Se corrigió el cambio de zona horaria que no se aplicaba a la hora de inicio de las URL activas.
+
+v21.7.2
+- Solo restablece el estado de recuperación si no reproduces una etiqueta EPG en diferido
+
+v21.7.1
+- Se corrigió el soporte de rutas locales en Connection Manager.
+
+v21.7.0
+- Agregue compatibilidad con el administrador de conexiones para esperar un archivo M3U válido antes de iniciar la instancia complementaria
+- El intervalo de actualización mínimo para el M3U debe ser de 1 minuto y no de cero, ya que sería una actualización infinita.
+
+v21.6.0
+- Solo se restablece la lista de grupos de canales cuando se lee la URL de un canal desde la lista de reproducción M3U
+- Modifique el comportamiento de EXTGRP para que sea una directiva de inicio para grupos de canales, es decir, se transmita a través de canales a menos que se restablezca mediante una directiva EXTGRP vacía o cualquier etiqueta de título de grupo para una directiva de canal EXTINF.
+- Actualice README sobre cómo funciona EPG for Media.
+
+v21.5.0
+- Extraer la temporada del título de Medis para la ruta si no está disponible.
+- Establezca el valor predeterminado para incluir el nombre del grupo de medios en la ruta si no hay ningún directorio presente.
+
+v21.4.2
+- Agregar soporte para Géneros para Medios
+
+v21.4.1
+- Los criterios de selección de entrada de la EPG para el cálculo del cambio de zona horaria funcionan tanto para los medios como para los canales.
+- Se corrigió la posibilidad de deshabilitar los medios desde la configuración.
+- Se corrigió que el nombre del grupo en la ruta de grabación estuviera deshabilitado en la configuración del complemento cuando los medios no estaban habilitados.
+
+v21.4.0
+- Especificador de formato M3U para anular el procesamiento en tiempo real en Kodi PVR donde la transmisión no debe tratarse como VOD/Media en la interfaz de usuario
+- Revertir la compatibilidad con la conexión asíncrona que causaba mensajes de error de Conexión perdida para los usuarios de este complemento.
+
+v21.3.1
+- Elimine los grupos de medios vacíos antes de enviarlos a Kodi PVR
+
+v21.3.0
+- Agregar opciones de configuración para agregar el nombre del grupo M3U al directorio de medios
+- Agregue la opción de experto para forzar que toda la lista de reproducción sea multimedia. Útil ahora que se admiten varias instancias
+- Admite grupos personalizados para medios
+
+v21.2.1
+- No codifique en URL las rutas utilizando los protocolos Resource:// o Special://.
+
+v21.2.0
+- Admite conexión asíncrona
+
+v21.1.1
+- Establezca la configuración predeterminada correctamente y actualice la migración de la configuración
+
+v21.1.0
+- Agregue soporte para múltiples instancias, cada una de las cuales admite su propia configuración y M3U/XMLTV
+
+v20.7.0
+- Agregue configuración para que los ID de canal coincidentes y el id de tvg distingan entre mayúsculas y minúsculas
+
+v20.6.1
+- Asegúrese de que los grupos estén delimitados por punto y coma cuando se suministran con una etiqueta EXTGRP
+- No interrumpa si se proporcionan varias URL de TVG, solo use la primera
+- Se corrigió la advertencia del uso de sprintf cambiando a snprintf
+
+v20.6.0
+- Actualización de la API de flujo de entrada de Kodi a la versión 3.2.0
+- Actualización de la API Kodi PVR a la versión 8.0.2
+
+v20.5.2
+- Corregido: algunos íconos que usan argumentos de URL no se muestran
+
+v20.5.1
+- Admite argumentos de URL al codificar la parte del archivo de la URL del icono
+
+v20.5.0
+- La URL codifica la última parte de la URL del logotipo de tvg, ya que puede basarse en nombres de canales y puede contener espacios y caracteres no estándar no permitidos en las rutas.
+
+v20.4.0
+- Admite el especificador de formato ${duration}
+- Se corrigió la imagen azul para usar Windows 2019 y VS 2019.
+
+v20.3.1
+- Se corrigió que se ignorara la etiqueta de número de canal
+
+v20.3.0
+- Elija un tipo de transmisión predeterminado adecuado para los modos de actualización predeterminados y agregados
+- Permitir etiquetas de actualización en el encabezado M3U
+- Actualizar cadenas de tipo flussonic catchup
+- Para ponerse al día con Flussonic, agregue soporte para tipos de transmisión genéricos (donde se usa cualquier nombre de directorio después de la identificación del canal)
+- Admite nombre de etiqueta alternativo para el número de canal
+- Se corrigió la ruta incorrecta del archivo de asignaciones de proveedores.
+
+v20.2.1
+- Eliminar PVR redundante del nombre del complemento
+
+v20.2.0
+- Actualizaciones de traducción por Weblate
+- Actualización de la API principal de Kodi a la versión 2.0.0
+
+v20.1.2
+- Configure el reproductor predeterminado como VideoPlayer para ffmpegdirect para que Timeshift funcione para PVR Radio
+
+v20.1.1
+- Permitir el uso de etiquetas VOD o multimedia para especificar la visualización como grabaciones PVR
+- Elimine las noticias ya que Kodi 20 cargará changelog.txt como respaldo de todos modos
+
+v20.1.0
+- Corregido: Cambiar el nombre del backend reportado
+- Agregado: Soporte para proveedores de pvr en Kodi 20
+- Agregado: admite medios VOD como grabaciones.
+
+v20.0.0
+- Modificado: compilaciones de prueba para 'Kodi 20 Nexus'
+- Versión aumentada a 20.0.0
+   - Con el inicio de Kodi 20 Nexus, el complemento toma como principal el mismo número de versión que Kodi.
+     Esto se hace para saber más fácilmente para qué Kodi funciona el complemento.
+
+v7.6.13
+- Corregido: Aplicar zona horaria para la primera fecha de emisión si es posterior a 1970
+
+v7.6.12
+- Corregido: siempre compare con la fecha de inicio sin procesar y no con la hora localizada para detectar NUEVOS programas
+- Corregido: No establecer el año si este programa es un programa de televisión.
+
+v7.6.11
+- Corregido: entrada de fecha EPG solo año de análisis
+
+v7.6.10
+- Corregido: corrige el número del episodio cuando no hay temporada.
+- Corregido: Servidor de retorno error si los canales o grupos no se pudieron cargar debido a que falta un archivo, por lo que no se borran en Kodi
+- Actualizaciones de traducciones de Weblate
+- id_id, ko_kr, pl_pl
+
+v7.6.9
+- Actualizaciones de traducciones de Weblate
+   -pl_pl
+
+v7.6.8
+- Actualizaciones de traducciones de Weblate
+   - zh_cn
+
+v7.6.7
+- Actualizaciones de traducciones de Weblate
+   - id_id, lt_lt
+
+v7.6.6
+- Actualización de idioma desde Weblate
+
+v7.6.5
+- Corregido: Permitir comas incrustadas en el nombre del canal en M3U
+
+v7.6.4
+- Corregido: solo use la ubicación del logotipo local si el archivo es relativo
+- Corregido: Agregar inicialización de cadenas desde macros ya que algunos Linux no se pueden compilar sin ellas.
+
+v7.6.3
+- Saltado
+
+v7.6.2
+- Corregido: permitir la corrección de actualización (cambio de zona horaria) cuando las URL activas tienen marcadores de posición de actualización
+- Corregido: Siempre cargar datos EPG si preferimos logotipos XMLTV o está habilitado el catchup
+
+v7.6.1
+- Corregido: Permitir ignorar logotipos M3U cuando se usa la ruta del logotipo local
+
+v7.6.0
+- Agregado: admite url-tvg en el encabezado M3U además de x-tvg-url
+- Agregado: agregue soporte para la compresión XZ de datos XMLTV
+- Corregido: Permitir identificadores de canales flusonnic que contengan barras diagonales
+- Corregido: deshabilite otras configuraciones de recuperación si la captura no está habilitada
+- Agregado: agregar configuración para la corrección de actualización
+- Agregado: admite prefijos de actualización xeev XC
+
+v7.5.1
+- Corregido: Trate la etiqueta de actualización 'tvg-rec' como la etiqueta siptv 'timeshift'
+- Corregido: Asegúrese de que se use la ventana de actualización del canal en lugar del valor de la configuración
+
+v7.5.0
+- Agregado: números de subcanal de soporte
+- Agregado: Permitir el alcance de configuración para canales usando la configuración del modo de recuperación para habilitar la anulación
+
+v7.4.3
+- Corregido: se agregó soporte para el uso de especificadores de formato para detectar la actualización y la granularidad de terminación.
+- Actualización: hacer que los complementos de flujo de entrada sean una dependencia requerida
+
+v7.4.2
+- Corregido: se agregó la inicialización faltante del nombre para mostrar con guiones bajos después de corregir el epg lento
+
+v7.4.1
+- Actualización: Léame - actualice la descripción de Kodi 19 y agregue la tabla de contenidos
+
+v7.4.0
+- Corregido: Un canal xmltv no puede tener un campo de identificación vacío
+- Corregido: Se corrigió la carga lenta de epg debido a las comprobaciones de nombre para mostrar al encontrar un canal.
+- Corregido: solo fuerce la carga de datos de EPG al inicio si la recuperación está habilitada
+- Agregado: admite filtros de grupos de canales personalizados
+- Agregado: recargar la configuración antes de recargar la lista de reproducción y los datos de EPG
+
+v7.3.0
+- Actualización: API PVR 7.1.0
+- Agregado: admite días máximos de epg pasados y futuros y siempre carga datos de EPG al inicio
+
+v7.2.0
+- Agregado: cadenas de formato y hora local seguras para marcas de tiempo en recuperación
+- Agregado: permitir especificadores de formato de hora actual/actual en las URL de transmisión en vivo
+- Agregado: Redactar fuente de actualización y cadena de formato de URL
+- Agregado: algunos proveedores usan 'tvg-rec' en lugar de 'catchup-days'
+- Agregado: establezca la versión mínima de ffmpegdirect en 1.19.0 para que admita el formato de marca de tiempo
+
+v7.1.0
+- Agregado: Establezca el flujo de entrada mínimo de ffmpegdirect, rtmp y versiones adaptativas a la versión estable de API para Matrix
+- Agregado: Redactar URL cuando se inicia sesión
+- Actualización: reemplace los corchetes con texto en negrita en el texto de ayuda de la configuración del complemento
+
+v7.0.0
+- Actualización: API PVR 7.0.2
+
+v6.4.1
+- Actualización: Eliminar p8 del archivo de control de Debian
+
+v6.4.0
+- Agregado: agregue opciones para admitir UDP y todos los tipos de transmisión cuando se usa la función Timeshift
+- Corregido: correcciones ortográficas README
+- Actualización: use el complemento StringUtils proporcionado y elimine la versión local
+
+v6.3.2
+- Actualización: elimine las plataformas p8 y agregue StringUtils locales para cpp17
+
+v6.3.1
+- Corregido: agregue TV/Radio al nombre del grupo si se usa el mismo nombre de grupo para ambos tipos de canales
+
+v6.3.0
+- Actualización: permitir una recuperación máxima de 15 días
+- Agregado: estreno de soporte y nueva etiqueta de XMLTV
+
+v6.2.4
+- Corregido: solo permitir timeshift en transmisiones en vivo
+
+v6.2.3
+- Corregido: No permitir el modo Timeshift en la transmisión VOD de actualización
+
+v6.2.2
+- Corregido: pasar correctamente información de transmisión en tiempo real al complemento inputstream.ffmpegdirect
+
+v6.2.1
+- Corregido: Arreglar el cambio de tiempo que no funciona para transmisiones de actualización sin marca de tiempo
+
+v6.2.0
+- Agregado: agregue una opción avanzada para cambiar el tiempo siempre habilitado para transmisiones compatibles usando propiedades M3U personalizadas
+
+v6.1.0
+- Agregado: Verifique que el flujo de entrada esté instalado o habilitado si se proporciona un flujo de entrada personalizado en M3U
+
+v6.0.1
+- Actualización de API de PVR 7.0.1
+
+v6.0.0
+- Actualización de PVR API 7.0.0
+- Complemento de reelaboración para admitir la nueva interfaz API
+
+v5.2.0
+- Agregado: habilite la función Timeshift desde inputstream.ffmpegdirect
+- Agregado: admite transmisiones de actualización de VOD, incluidas aquellas a través de URL de complementos
+- Agregado: acceso a la configuración de ffmpegdirect y comprobaciones de flujo de entrada (API de C++)
+- Corregido: Se corrigieron los ts flussonic detectados como de tipo incorrecto
+- Corregido: use kodis integrado en flujos de entrada para las URL de complementos
+- Corregido: Se corrigió la granularidad de recuperación incorrecta para la corriente flussonic
+
+v5.1.0
+- Agregado: admite propiedad M3U de tipo catchup
+- Agregado: establezca el tipo MIME y el manifiesto en los tipos de transmisión si es necesario
+- Agregado: admite múltiples apariciones de año, mes y día en especificadores de formato de actualización
+- Actualización: cambie los documentos para usar inputstream en lugar de inputstreamclass
+
+v5.0.0
+- Actualización de API de PVR 6.5.1
+- Actualización de API global 1.2.0
+
+v4.14.2
+- Verifique que las transmisiones de actualización admitan el cambio de tiempo antes de permitirles hacerlo.
+- Se corrigieron las transmisiones de actualización para fs, xc y shift al pasar la URL con posibles opciones de protocolo.
+
+v4.14.1
+- Corregido: Enviar propiedad de tipo de manifiesto a ffmpegdirect para que pueda reconocer Smooth Transmisión
+
+v4.14.0
+- Agregado: Stream Manager para almacenamiento en caché en tiempo de ejecución de tipos de transmisión/mime para acelerar los cambios de canal
+- Agregado: desaprobar el uso de inputstream.ffmpegdirect.mime_type y usar la propiedad mimetype en su lugar
+- Agregado: admite configuración avanzada para establecer un flujo de entrada predeterminado y/o tipo MIME para canales sin ellos
+- Corregido: Se corrigió que el cálculo de timeshift completo no se aplicara a las transmisiones de actualización
+- Agregado: admite valor de corrección de actualización en el archivo M3U para transmisiones de actualización que no coinciden geográficamente con el momento incorrecto
+
+v4.13.6
+- Actualización: PVR API 6.5.0
+
+v4.13.5
+- Corregido: corrige las URL de complementos para canales al deshabilitar las pruebas de URL de tipo de transmisión
+- Actualización: actualice el archivo Léame sobre la finalización de las transmisiones de actualización
+
+v4.13.4
+- Corregido: Solo permite la actualización de Timeshifting desde EPG si el canal lo admite.
+
+v4.13.3
+- Actualización: API PVR 6.4.0
+- Actualización: limpiezas menores
+
+v4.13.2
+- Corregido: Instalar todas las dependencias del flujo de entrada de forma predeterminada.
+- Corregido: archivos de control de Debian para dependencias en tiempo de ejecución.
+
+v4.13.1
+- Corregido: Instalar la dependencia ffmpegdirect de forma predeterminada.
+
+v4.13.0
+- Agregado: agregue soporte para la propiedad de granularidad de flujo de actualización para ffmpegdirect
+- Corregido: Falta el caso de uso de finalización de verificación de flujo de actualización
+
+v4.12.0
+- Agregado: agregue soporte para terminar la propiedad de transmisiones de actualización para ffmpegdirect
+- Actualización: convierte los nombres de kodiprop inputstreamaddon y inputstreamclass a inputstream al cargar
+
+v4.11.7
+- Corregido: los encabezados de medios de transmisión no se configuran cuando se usa inputstream.adaptive para transmisiones HLS
+
+v4.11.6
+- Corregido: corrigió la selección incorrecta de URL en vivo y el flujo de entrada para transmisiones de actualización estándar (sin timeshift)
+- Corregido: almacenar en caché correctamente mime_type para transmisiones
+
+v4.11.5
+- Corregido: error tipográfico en la expresión regular de la fecha, lo que provocaba que no se cargara la EPG en algunas plataformas.
+
+v4.11.4
+- Corregido: rendimiento de EPG
+- Actualización: PVR API 6.3.0
+- Agregado: insignia GPLv2+ en README
+- Actualización: SPDX en el encabezado de derechos de autor para GPLv2 o posterior
+
+v4.11.3
+- Agregar: archivo de licencia GPL2 y mostrar GPL2 en README.md
+- Actualización: agregue la URL de origen, la URL del foro y el nombre de la licencia a addon.xml
+- Actualización: Año de copyright hasta 2020 y uso Kodi / kodi.tv
+- Actualización: código de compilación de Debian
+- Actualización: algunas limpiezas menores
+
+v4.11.2
+- Actualización: API PVR 6.2.0
+
+v4.11.1
+- Corregido: también verifique el tipo mime ffmpegdirect al verificar el tipo de transmisión
+- Corregido: Pasar el tipo mime a ffmpegdirect si está disponible
+- Corregido: La inspección del tipo de transmisión para el cambio de modo de actualización debería ser TS por defecto
+
+v4.11.0
+- Agregado: admite nuevos proveedores de actualización, shift, xc y fs, incluido el soporte de transmisión TS
+- Agregado: soporte para el especificador de formato de actualización de marca de tiempo
+- Agregado: ID de actualización opcional por programa de XMLTV
+- Agregado: agregue ejemplos de actualización de M3U8 a README
+- Corregido: transmisiones de actualización en vivo que no admiten Timeshift
+- Corregido: No crear una URL de actualización de prueba para transmisiones que no sean de actualización
+- Agregado: soporte para el especificador de formato de recuperación de compensación
+- Actualización: Agregar plataforma p8 al complemento depende en lugar de Kodi
+
+v4.10.0
+- Agregado: soporte de usuario-agente desde la configuración avanzada del complemento
+
+v4.9.0
+- Agregado: soporte de actualización (también conocido como Archivo)
+- Agregado: Falta verificación para el tipo de transmisión HLS
+- Actualización: Léame
+- Corregido: comentarios de strings.po
+
+v4.8.5
+- Actualización: archivos de idioma Transifix
+
+v4.8.4
+- Corregido: deshabilita el almacenamiento en caché cuando se usan los modos de actualización M3U/XMLTV
+- Corregido: también verifique la propiedad del tipo mime del canal al determinar el tipo de transmisión
+- Corregido: niveles de configuración correctos
+
+v4.8.3
+- Corregido: Canal y epg actualizan bucle infinito
+
+v4.8.2
+- Corregido: Inicializar el tamaño de las propiedades y verificar el máximo.
+- Corregido: La reproducción de un canal fallará si el archivo/URL no existe
+- Corregido: admite tanto la clase de flujo de entrada como las propiedades adicionales
+- Corregido: Permitir anulación de la opción de reconexión de ffmpeg
+- Corregido: Corregir la ortografía de la propiedad del encabezado
+- Actualización: Léame
+
+v4.8.1
+- Corregido: el logotipo de canales locales con extensión .jpg no funciona
+
+v4.8.0
+- Agregado: permitir el uso de inputstream ffmpeg para archivos m3u8 a los que les falta la extensión correcta
+- Agregado: soporte para x-tvg-url en el encabezado de la lista de reproducción para datos XMLTV
+- Agregado: Agregar propiedades EXTVLCOPT para encabezados
+- Corregido: Arreglar el prefijo de transmisión de multidifusión RTP
+- Agregado: agregue soporte para transmisión Dash y Smooth a través de inputstream.adaptive
+- Agregado: Agregar opción para usar inputsream.adaptive para transmisiones m3u8/hls
+- Agregado: admite la reconexión de FFmpeg para transmisiones http usando inputstream ffmpeg
+- Corregido: Limitar las propiedades EXTVLCOPT permitidas al conjunto conocido
+- Corregido: Agregar propiedades de transmisión adicionales solo en minúsculas
+- Corregido: Admite inputstreamaddon para anular inputstream
+- Actualización: Léame
+
+v4.7.1
+- Actualización: Cambiar de rapixml a pugixml
+- Corregido: tvg-id no coincide con un canal si no hay nombres para mostrar en xmltv
+- Corregido: combinar múltiples canales XMLTV que comparten la misma identificación
+
+v4.7.0
+- Corregido: Agregar extensión del logotipo del canal solo para rutas relativas
+- Corregido: corrección del registrador trasladada desde pvr.hts
+- Actualización: actualizar Léame
+- Agregado: Transforme las URL de transmisión de multidifusión UDP/RTP en URL udpxy locales
+
+v4.6.1
+- Corregido: Arreglar los logotipos de canales obteniendo la extensión predeterminada
+
+v4.6.0
+- Agregado: actualización automática de M3U
+- Actualización: actualice los enlaces de github para Matrix
+- Actualización: Elimina la dependencia de la utilidad, subproceso y mutex de la plataforma p8
+- Agregado: cambie la configuración de EPGTimeshift a horas en lugar de minutos
+
+v4.5.2
+- Acelerar la carga de EPG
+
+v4.5.1
+- Corregir advertencias del compilador.
+
+v4.5.0
+- Corregido: Suplemento rango completo de timeshift de -12 a +14 horas
+- Corregido: Algunos proveedores usan incorrectamente tvg-ID en lugar de tvg-id
+- Corregido: admite múltiples nombres para mostrar y no distingue entre mayúsculas y minúsculas. tvg-id siempre está primero, luego tvg-name y luego nombre del canal, orden de búsqueda
+- Agregado: admite episodio-num para xmltv_ns y sistemas en pantalla en la entrada epg
+- Agregado: actualice el archivo Léame para los formatos y géneros M3U y XMLTV compatibles.
+- Agregado: admite calificación de estrellas en la entrada epg
+- Agregado: soporte para la primera emisión y el año en la entrada epg.
+- Agregado: actualizar el script de compilación de OSX
+- Agregado: admite múltiples elementos de actor/director/escritor en la entrada del epg.
+- Agregado: URLEncode y agregar texto .png para logotipos remotos creados a partir del nombre del canal
+- Agregado: soporte para mapeo por ID hexadecimal de género y archivos y configuraciones de ejemplo agregados
+- Agregado: Tiempo para la lista de reproducción y carga de EPG
+- Agregado: Opción para numerar canales solo por pedido M3U
+- Actualización: registro de depuración
+- Agregado: orden de miembros del grupo de canales establecido en orden M3U
+- Corregido: Se corrigió el error de segmentación para archivos EPG comprimidos
+- Agregado: Agregar pedidos para grupos según PVR API 6.1.0
+
+v4.4.0
+- Actualización: Recompilar para compatibilidad con la API del complemento PVR 6.1.0
+
+v4.3.0
+- Agregado: canales de recarga automática, grupos y EPG al cambiar la configuración
+- Agregado: soporte para la etiqueta #EXTGRP en el archivo M3U
+- Corregido: el canal sin grupos hereda los grupos de canales anteriores.
+- Agregado: actualice los encabezados de nuevos archivos kodi para comenzar con kodi/
+
+v4.2.2
+- Actualizar la versión del sistema de compilación.
+- Cambiar encabezado incluye forma
+- Agregar AppVeyor para pruebas de compilación relacionadas con Windows
+
+v4.2.1
+- Arreglar la inicialización nullptr
+
+v4.2.0
+- Agregar soporte para subtítulos/actor/director/escritor en XML
+
+v4.1.0
+- Soporte EXTVCOPT en m3u8
+- Crear script auxiliar para OSX
+
+v4.0.2
+- Corregir tiempos de EPG incorrectos debido al horario de verano en Windows
+
+v4.0.1
+- Eliminar notificación de canales cargados
+
+v4.0.0
+- Actualización de la API del complemento PVR v6.0.0
+
+v3.5.7
+- Mostrar correctamente la versión de compilación en Kodi.
+
+v3.5.6
+- Archivos de idioma actualizados de Transifex
+
+v3.5.5
+- Actualice zlib a la versión 1.2.11
+
+v3.5.4
+- Eliminar rapidxml incluido
+
+v3.5.2
+- Agregar soporte para #EXT-X-PLAYLIST-TYPE en M3U
+
+v3.5.1
+- Actualizado a la API adicional PVR v5.10.1
+
+v3.5.0
+- Actualizado a la API adicional PVR v5.10.0
+
+v3.4.3
+- Actualizado a la API adicional PVR v5.9.0
+
+v3.4.1
+- Agregue soporte para KODIPROP en M3U (para inputstream.adaptive)
+
+v3.4.0
+- Actualizado a la API adicional PVR v5.8.0
+
+v3.3.3
+- Se corrigieron problemas de subprocesos múltiples
+
+v3.3.0
+- Actualizado a la API adicional PVR v5.7.0
+
+v3.2.2
+- Actualizado a la API del complemento PVR v5.6.0
+
+v3.2.1
+- Se agregó soporte para múltiples grupos por canal, separados por punto y coma
+
+v3.2.0
+- Actualizado a la API del complemento PVR v5.5.0
+
+v3.1.1
+- Se eliminó la limitación de longitud de línea al analizar archivos M3U.
+
+v3.1.0
+- Actualizado a la API del complemento PVR v5.3.0
+
+v3.0.6
+- Eliminación de la función de interfaz adicional nunca utilizada
+
+v3.0.5
+- Actualizar el control de paquetes de Debian
+- Cambios en la forma de devolución de llamada del complemento PVR
+
+v3.0.4
+- Se eliminaron las funciones de versión antiguas que ya no son necesarias.
+
+v3.0.3
+- establecer versiones de dependencia automáticas durante la compilación
+- Se eliminó Kodi que nunca usó para agregar funciones.
+- construir correcciones del sistema
+
+v3.0.2
+- Solución: cambia la longitud de la línea a 4k
+
+v3.0.0
+- Versión inicial de Kodi v18
+
+v2.4.4
+- Solución: Manejar el desplazamiento de tiempo en las horas de inicio y finalización del programa EPG.
+
+v2.4.3
+- archivos de idioma actualizados de Transifex
+
+v2.4.2
+- archivos de idioma actualizados de Transifex
+
+v2.4.1
+- archivos de idioma actualizados de Transifex
+
+v2.4.0
+- Cmake: cambiar el nombre de find_package kodi a Kodi
+- Intento de analizar listas de reproducción que carecen del marcador EXTM3U
+
+v2.3.1
+- La solución incluye
+
+v2.3.0
+- Actualizado a la API adicional PVR v5.2.0
+
+v2.2.0
+- Actualizado a la API del complemento PVR v5.1.0
+
+v2.1.1
+- Solución: no ignore el logotipo de los canales si la configuración de ruta del logotipo base está vacía.
+- Solución: No aplique la ruta del logotipo base al logotipo de los canales si tvg-logo tiene una ruta NET completa.
+
+v2.1.0
+- Actualizado a la API del complemento PVR v5.0.0
+
+v2.0.2
+- archivos de idioma actualizados de Transifex
+
+v2.0.1
+- Actualizado a PVR API v4.2.0
+
+v2.0.0
+- Versión inicial de Kodi Krypton.
+
+v1.12.9
+- archivos de idioma actualizados de Transifex
+
+v1.12.8
+- archivos de idioma actualizados de Transifex
+
+v1.12.7
+- archivos de idioma actualizados de Transifex
+
+v1.12.6
+- Actualizado a PVR API v4.1.0
+
+v1.12.5
+- Actualizado a PVR API v4.0.0
+
+v1.12.4
+- Actualizado a PVR API v3.0.0 (modo de compatibilidad API 1.9.7)
+
+v1.12.3
+- Actualizado a PVR API v2.1.0
+- Complete automáticamente el nombre de la plataforma y la biblioteca
+
+v1.12.2
+- Empaquetado de Debian: arreglar la ruta de instalación de la biblioteca
+- Correcciones varias de backend
+
+v1.12.1
+- actualizado a API v2.0.0
+
+v1.12.0
+- actualizado a API v1.9.7
+
+v1.11.3
+- archivos de idioma actualizados de Transifex
+
+v1.11.2
+- actualizado para usar el nuevo libplatform-dev
+
+v1.11.1
+- Carga fija de EPG.
+
+v1.11.0
+- actualizado a API v1.9.6
+- nueva característica: logotipos de canales de xmltv
+- nueva característica: asigna el género xmltv al género Kodi a través de géneros.xml
+- ahora es posible definir la ruta completa del logotipo en m3u si la ruta del logotipo está vacía en la configuración
+- muchas mejoras de código.
+
+v1.10.2
+- actualizado a API v1.9.5
+
+v1.10.1
+- archivos de idioma de Transifex
+- cambios menores para cumplir con C++11
+- Actualizado a API v1.9.4
+
+v1.9.12
+- Se agregó la función getBackendHostname
+
+v1.9.10
+- cambiar el nombre de la biblioteca a Kodi
+
+v1.9.9
+- Se corrigió el punto muerto al activar el complemento en algunos tiempos de ejecución de Darwin (osx, ios).
+
+v1.9.6
+- actualizado a API v1.9.2
+
+v1.9.3
+- configuración agregada para deshabilitar el caché m3u/epg
+- soporte añadido <icon src=""/> para programa en epg
+- posibilidad añadida de especificar la ruta del logotipo como URL
+- El logotipo de tvg modificado debe contener el nombre de archivo completo del logotipo (con extensión)
+- cambiado, no intente descargar xmltv si no se carga después de 3 intentos.
+
+v1.9.2
+- agregar funciones de búfer timeshift
+
+v1.8.1
+- Problema solucionado con el encabezado BOM en EPG XML
+- solucionado el problema con los canales de actualización si se cambian en m3u
+- configuración agregada del número inicial de canales
+
+v1.8.0
+- Versión inicial
+- Admite m3u como fuente de transmisiones de TV en vivo y XMLTV como fuente EPG
+- Admite TV en vivo, canales de radio y EPG
